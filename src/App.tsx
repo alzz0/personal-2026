@@ -49,7 +49,7 @@ const experience = [
 
 const expertise = [
   'TypeScript, React, Next.js',
-  'Node.js backend systems',
+  'Node.js backend systems ',
   'Cloud architecture on AWS',
   'SaaS product design and execution',
 ]
