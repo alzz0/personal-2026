@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+:root {
+  --bc-bg: #ffffff;
+  --bc-surface: #ffffff;
+  --bc-border: #e2e8f0;
+  --bc-text: #0f172a;
+  --bc-muted: #475569;
+  --bc-primary: #6366f1;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bc-bg);
+  color: var(--bc-text);
+  font-family: "Inter", "SF Pro Text", "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
