@@ -100,7 +100,7 @@ const fadeUp = {
   initial: { opacity: 0, y: 20 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true },
-  transition: { duration: 0.5, ease: "easeOut" },
+  transition: { duration: 0.5, ease: "easeOut" as const },
 };
 
 const stagger = {
@@ -113,7 +113,7 @@ const stagger = {
 const itemAnim = {
   initial: { opacity: 0, y: 15 },
   whileInView: { opacity: 1, y: 0 },
-  transition: { duration: 0.4, ease: "easeOut" },
+  transition: { duration: 0.4, ease: "easeOut" as const },
 };
 
 function App() {
