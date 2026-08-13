@@ -220,7 +220,7 @@ function EngineeringPage() {
             How I build the systems behind <em>ByteCap.</em>
           </h1>
           <p>
-            Deep dives into the technical decisions, trade-offs, and lessons
+            Deep dives into the technical decisions, trade offs, and lessons
             behind an AI video product used by thousands of creators.
           </p>
           <div className="engineering-hero-meta">
@@ -276,8 +276,8 @@ function EngineeringPage() {
             <p className="eyebrow">The goal</p>
             <h2>Show the thinking, not just the stack.</h2>
             <p>
-              Each note will cover the problem, approach, architecture,
-              trade-offs, and what changed after the system met real users.
+              Each note will cover the problem, approach, architecture, trade
+              offs, and what changed after the system met real users.
             </p>
           </div>
         </section>
@@ -531,8 +531,9 @@ function AiClippingPage() {
   );
 }
 
-function App() {
-  const path = window.location.pathname.replace(/\/+$/, "") || "/";
+function App({ pathname }: { pathname?: string }) {
+  const path =
+    (pathname ?? window.location.pathname).replace(/\/+$/, "") || "/";
   if (path === "/engineering/ai-clipping") return <AiClippingPage />;
   if (path === "/engineering") return <EngineeringPage />;
 
@@ -774,7 +775,7 @@ function App() {
               <h2>A few chapters from the build log.</h2>
               <p>
                 Product teams, consulting, streaming, fintech, industrial
-                automation—and plenty of lessons shipped along the way.
+                automation and plenty of lessons shipped along the way.
               </p>
             </div>
             <div className="timeline">

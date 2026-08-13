@@ -15,6 +15,10 @@ The React Compiler is not enabled on this template because of its impact on dev 
 
 If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
+Adding a future case study (e.g. "auto B-roll"):
+1. Add the route branch in src/App.tsx
+2. Add a title/description in src/meta.ts
+3. Add the route to additionalPrerenderRoutes in vite.config.ts
 ```js
 export default defineConfig([
   globalIgnores(['dist']),
