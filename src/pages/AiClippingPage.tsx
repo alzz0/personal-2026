@@ -159,30 +159,61 @@ export default function AiClippingPage() {
           className="architecture-card"
           aria-label="AI clipping pipeline overview"
         >
-          <div className="architecture-heading">
+          <div className="architecture-heading flex flex-wrap items-center gap-3">
             <Waypoints aria-hidden="true" />
             <span>Pipeline overview</span>
-            <span className="status">Production pipeline</span>
+            <span className="status ml-auto whitespace-nowrap">
+              Production pipeline
+            </span>
           </div>
-          <div className="architecture-flow">
-            {pipelineSteps.map(([number, title, detail], index) => (
-              <Fragment key={number}>
-                <div className={`architecture-node node-${number}`}>
-                  <span className="architecture-number">{number}</span>
-                  <strong>{title}</strong>
-                  <small>{detail}</small>
-                </div>
+          {/* Desktop pipeline */}
+          <div className="hidden md:block">
+            <div className="architecture-flow">
+              {pipelineSteps.map(([number, title, detail], index) => (
+                <Fragment key={number}>
+                  <div className={`architecture-node node-${number}`}>
+                    <span className="architecture-number">{number}</span>
+                    <strong>{title}</strong>
+                    <small>{detail}</small>
+                  </div>
 
-                {index < pipelineSteps.length - 1 && (
-                  <span
-                    className={`architecture-arrow arrow-${number}`}
-                    aria-hidden="true"
-                  >
-                    →
+                  {index < pipelineSteps.length - 1 && (
+                    <span
+                      className={`architecture-arrow arrow-${number}`}
+                      aria-hidden="true"
+                    >
+                      →
+                    </span>
+                  )}
+                </Fragment>
+              ))}
+            </div>
+          </div>
+
+          {/* Mobile pipeline */}
+          <div className="md:hidden">
+            <div className="grid grid-cols-2 gap-3 pt-6 pb-6">
+              {pipelineSteps.map(([number, title, detail], index) => (
+                <div
+                  key={number}
+                  className={`rounded-2xl border border-white/10 bg-white/[0.025] p-4 ${
+                    index === pipelineSteps.length - 1 ? "col-span-2" : ""
+                  }`}
+                >
+                  <span className="mb-4 block font-mono text-xs font-semibold text-lime-400">
+                    {number}
                   </span>
-                )}
-              </Fragment>
-            ))}
+
+                  <strong className="block text-lg font-semibold leading-tight text-white">
+                    {title}
+                  </strong>
+
+                  <small className="mt-2 block text-sm leading-relaxed text-white/50">
+                    {detail}
+                  </small>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
